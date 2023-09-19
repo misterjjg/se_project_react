@@ -33,6 +33,19 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    if (!activeModal) return;
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscClose);
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
+
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
@@ -41,37 +54,56 @@ function App() {
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
           <label>
-            Name
+            <p className="modal__input-title">Name</p>
             <input
               type="text"
               name="name"
               minLength="1"
               maxLength="30"
               placeholder="Name"
+              required
+              className="modal__input"
             ></input>
           </label>
           <label>
-            Image
+            <p className="modal__input-title">Image</p>
             <input
               type="url"
               name="link"
               minLength="1"
               placeholder="Image URL"
+              required
+              className="modal__input"
             />
           </label>
-          <p>Select the weather type: </p>
-          <div>
-            <div>
-              <input type="radio" id="hot" value="hot" />
-              <label>Hot</label>
+          <p className="modal__weather-section">Select the weather type: </p>
+          <div className="modal__radio-section">
+            <div className="modal__radio-option">
+              <input
+                type="radio"
+                id="hot"
+                value="hot"
+                className="modal__radio-button"
+              />
+              <label className="modal__radio-weather">Hot</label>
             </div>
-            <div>
-              <input type="radio" id="warm" value="warm" />
-              <label>Warm</label>
+            <div className="modal__radio-option">
+              <input
+                type="radio"
+                id="warm"
+                value="warm"
+                className="modal__radio-button"
+              />
+              <label className="modal__radio-weather">Warm</label>
             </div>
-            <div>
-              <input type="radio" id="cold" value="cold" />
-              <label>Cold</label>
+            <div className="modal__radio-option">
+              <input
+                type="radio"
+                id="cold"
+                value="cold"
+                className="modal__radio-button"
+              />
+              <label className="modal__radio-weather">Cold</label>
             </div>
           </div>
         </ModalWithForm>
