@@ -12,9 +12,57 @@
 
 .modal__content {
   background-color: white;
-  max-width: 496px;
+  position: relative;
   width: 100%;
-  max-height: 436px;
   border-radius: 20px;
   padding: 34px 36px;
+}
+
+.modal__submit-button {
+  margin-top: 34px;
+  width: 124px;
+  height: 36px;
+  padding: 0;
+  color: white;
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-weight: 700;
+  line-height: 1.1;
+  border-radius: 4px;
+  background-color: #000;
+  border: 1px;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal__submit-button:hover {
+  opacity: 0.6;
+}
+
+.modal__submit-button:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: url(../../images/closeButton.svg) no-repeat center;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__title {
+  max-width: 440px;
+  margin: 0px;
+  padding-bottom: 20px;
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2px;
 }

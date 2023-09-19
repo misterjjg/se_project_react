@@ -17,3 +17,31 @@
   gap: 20px;
   align-items: center;
 }
+
+.header__button {
+  color: #000;
+  font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.header__avatar-name {
+  color: #000;
+  font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.header__date {
+  color: #000;
+  font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
