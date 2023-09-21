@@ -88,6 +88,7 @@ function App() {
                 id="hot"
                 value="hot"
                 className="modal__radio-button"
+                name="weatherType"
               />
               <label className="modal__radio-weather" htmlFor="hot">
                 Hot
@@ -99,6 +100,7 @@ function App() {
                 id="warm"
                 value="warm"
                 className="modal__radio-button"
+                name="weatherType"
               />
               <label className="modal__radio-weather" htmlFor="warm">
                 Warm
@@ -110,6 +112,7 @@ function App() {
                 id="cold"
                 value="cold"
                 className="modal__radio-button"
+                name="weatherType"
               />
               <label className="modal__radio-weather" htmlFor="cold">
                 Cold
