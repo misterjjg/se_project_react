@@ -1,0 +1,37 @@
+.clothes-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.clothes-section__container {
+  display: flex;
+  gap: 20px;
+}
+
+.clothes-section__title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.clothes-section__btn {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.clothes-section__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-top: 34px;
+  padding: 0;
+  list-style: none;
+}
