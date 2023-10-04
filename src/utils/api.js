@@ -7,8 +7,8 @@ export const checkServerResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
-export const getClothingItems = () => {
-  return fetch(`${baseUrl}/items`, {
+export const getClothingItems = (_id) => {
+  return fetch(`${baseUrl}/items/${_id}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   }).then(checkServerResponse);
