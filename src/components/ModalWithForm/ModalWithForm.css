@@ -45,7 +45,7 @@
   cursor: default;
 }
 
-.modal__close-button {
+/* .modal__close-button {
   position: absolute;
   top: 20px;
   right: 28px;
@@ -54,7 +54,7 @@
   background: url(../../images/closeButton.svg) no-repeat center;
   border: none;
   cursor: pointer;
-}
+} */
 
 .modal__title {
   max-width: 440px;

@@ -2,7 +2,7 @@ import "./ConfirmationModal.css";
 
 const ConfirmationModal = ({
   selectedCard,
-  onCloseModal,
+  onClose,
   onDeleteItem,
   buttonText,
 }) => {
@@ -15,7 +15,7 @@ const ConfirmationModal = ({
         <button
           className="modal__confrim-close-button"
           type="button"
-          onClick={onCloseModal}
+          onClick={onClose}
         />
         <div className="modal__confirm-text-wrapper">
           <p className="modal__confirm-text">
@@ -33,7 +33,7 @@ const ConfirmationModal = ({
         <button
           className="modal__confirm-cancel-button"
           type="button"
-          onClick={onCloseModal}
+          onClick={onClose}
         >
           Cancel
         </button>

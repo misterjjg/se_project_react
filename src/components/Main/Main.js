@@ -20,7 +20,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems, type, day }) {
   }, [weatherTemp]);
 
   const filteredCards = clothingItems.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
+    return item?.weather?.toLowerCase() === weatherType;
   });
 
   return (

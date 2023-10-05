@@ -7,8 +7,8 @@ const ClothesSection = ({ clothingItems, onSelectCard, onCreateModal }) => {
       <div className="clothes-section__container">
         <h3 className="clothes-section__title">Your Items</h3>
         <button
-          className="clothes-section__btn"
-          type="text"
+          className="clothes-section__button"
+          type="button"
           onClick={onCreateModal}
         >
           + Add New

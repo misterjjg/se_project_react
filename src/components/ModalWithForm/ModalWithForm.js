@@ -15,7 +15,7 @@ const ModalWithForm = ({
         <button
           type="button"
           onClick={onClose}
-          className="modal__close-button"
+          className="modal__item-close-button"
         />
         <h3 className="modal__title">{title}</h3>
         <form onSubmit={onSubmit}>
