@@ -1,4 +1,4 @@
-const baseUrl = "https://localhost:3001";
+const baseUrl = "http://localhost:3001";
 
 export const checkServerResponse = (res) => {
   if (res.ok) {
@@ -7,8 +7,8 @@ export const checkServerResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
-export const getClothingItems = (_id) => {
-  return fetch(`${baseUrl}/items/${_id}`, {
+export const getClothingItems = () => {
+  return fetch(`${baseUrl}/items`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   }).then(checkServerResponse);
@@ -26,13 +26,9 @@ export const addNewClothingItem = (newItem) => {
   }).then(checkServerResponse);
 };
 
-export const deleteClothingItems = (_id) => {
-  return fetch(`${baseUrl}/items/${_id}`, {
+export const deleteClothingItems = (id) => {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   }).then(checkServerResponse);
-};
-
-export const request = (url, options) => {
-  return fetch(url, options).then(checkServerResponse);
 };
