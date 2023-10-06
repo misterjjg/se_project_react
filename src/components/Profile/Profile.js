@@ -1,15 +1,15 @@
 import "../Profile/Profile.css";
-import SideBar from "./SideBar/SideBar";
-import ClothesSection from "./ClothesSection/ClothesSection";
+import SideBar from "../SideBar/SideBar";
+import ClothesSection from "../ClothesSection/ClothesSection";
 
-function Profile({ clothingItems, onSelectCard, onOpenModal }) {
+function Profile({ clothingItems, onSelectCard, onCreateModal }) {
   return (
     <main className="profile">
       <SideBar />
       <ClothesSection
         clothingItems={clothingItems}
         onSelectCard={onSelectCard}
-        onOpenModal={onOpenModal}
+        onCreateModal={onCreateModal}
       />
     </main>
   );
