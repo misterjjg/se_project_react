@@ -4,7 +4,7 @@ import avatar from "../../images/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 
-const Header = ({ onCreateModal, location }) => {
+const Header = ({ onCreateModal, userLocation }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -19,7 +19,7 @@ const Header = ({ onCreateModal, location }) => {
           </Link>
         </div>
         <h3 className="header__date">
-          {currentDate} {location}
+          {currentDate} {userLocation}
         </h3>
       </div>
       <div className="header__avatar">

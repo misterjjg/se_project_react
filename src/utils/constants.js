@@ -2,17 +2,17 @@ export const weatherOptions = [
   {
     url: require("../images/day/Sun.svg").default,
     day: true,
-    type: "sun",
+    type: "sunnny",
   },
   {
     url: require("../images/day/Cloud.svg").default,
     day: true,
-    type: "cloud",
+    type: "clouds",
   },
   {
     url: require("../images/day/Fog.svg").default,
     day: true,
-    type: "fog",
+    type: "mist",
   },
   {
     url: require("../images/day/Rain.svg").default,
@@ -32,31 +32,31 @@ export const weatherOptions = [
   {
     url: require("../images/night/Cloudy.svg").default,
     day: false,
-    type: "cloudy",
+    type: "clouds",
   },
   {
     url: require("../images/night/Foggy.svg").default,
     day: false,
-    type: "foggy",
+    type: "mist",
   },
   {
     url: require("../images/night/Moon.svg").default,
     day: false,
-    type: "moon",
+    type: "night",
   },
   {
     url: require("../images/night/Raining.svg").default,
     day: false,
-    type: "raining",
+    type: "rain",
   },
   {
     url: require("../images/night/Snowy.svg").default,
     day: false,
-    type: "snowy",
+    type: "snow",
   },
   {
     url: require("../images/night/Stormy.svg").default,
     day: false,
-    type: "stormy",
+    type: "storm",
   },
 ];

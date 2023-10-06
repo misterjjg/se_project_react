@@ -14,14 +14,14 @@ export const getClothingItems = () => {
   }).then(checkServerResponse);
 };
 
-export const addNewClothingItem = (newItem) => {
+export const addNewClothingItem = (item) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      name: newItem.name,
-      weather: newItem.weather,
-      imageUrl: newItem.imageUrl,
+      name: item.name,
+      weather: item.weather,
+      imageUrl: item.imageUrl,
     }),
   }).then(checkServerResponse);
 };

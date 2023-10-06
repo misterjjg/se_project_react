@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState } from "react";
 
 const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
   const [name, setName] = useState("");
+  const [weatherType, setWeatherType] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const handleNameChange = (e) => {
     console.log(e.target.value);
     setName(e.target.value);
   };
 
-  const [link, setUrl] = useState("");
-
   const handleUrlChange = (e) => {
     console.log(e.target.value);
-    setUrl(e.target.value);
+    setImageUrl(e.target.value);
   };
 
-  const [weather, setWeather] = useState("");
-
   const handleWeatherChange = (e) => {
-    setWeather(e.target.value);
+    setWeatherType(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem({ name, weather, link });
+    onAddItem({ name, imageUrl, weatherType });
   };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setName("");
+      setImageUrl("");
+      setWeatherType("");
+    }
+  }, [isOpen]);
 
   return (
     <ModalWithForm
@@ -42,7 +48,7 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
           type="text"
           name="name"
           minLength="1"
-          maxLength="30"
+          maxLength="100"
           placeholder="Name"
           required
           className="modal__input"
@@ -55,11 +61,10 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
         <input
           type="url"
           name="link"
-          minLength="1"
           placeholder="Image URL"
           required
           className="modal__input"
-          value={link}
+          value={imageUrl}
           onChange={handleUrlChange}
         />
       </label>
