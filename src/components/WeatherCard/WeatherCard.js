@@ -9,7 +9,8 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
     return item.day === day && item.type === type;
   });
 
-  const weatherOptionUrl = weatherOption[0]?.url || "";
+  const weatherOptionUrl = weatherOption?.url || "";
+  const weatherOptionType = weatherOption?.type;
 
   return (
     <section className="weather" id="weather">
@@ -19,7 +20,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
       <img
         src={weatherOptionUrl}
         className="weather__image"
-        alt="weather bar"
+        alt={weatherOptionType}
       />
     </section>
   );
