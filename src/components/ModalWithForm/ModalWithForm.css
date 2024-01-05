@@ -36,6 +36,15 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+.modal__submit-button2 {
+  position: absolute;
+  right: 260px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  width: 80px;
+  margin-left: 8px;
+}
+
 .modal__submit-button:hover {
   opacity: 0.6;
 }
