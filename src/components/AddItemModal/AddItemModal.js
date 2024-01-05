@@ -3,6 +3,8 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState } from "react";
 
 const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
+  const token = localStorage.getItem("jwt");
+
   const [name, setName] = useState("");
   const [weatherType, setWeatherType] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -21,7 +23,7 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem({ name, imageUrl, weatherType });
+    onAddItem({ name, imageUrl, weatherType, token });
   };
 
   useEffect(() => {
