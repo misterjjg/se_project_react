@@ -65,3 +65,11 @@ export const weatherOptions = [
     type: "storm",
   },
 ];
+
+// --- CLOTHING API --- //
+export const baseUrl = "http://localhost:3001";
+
+export const headers = {
+  authorization: "",
+  "Content-Type": "application/json",
+};
