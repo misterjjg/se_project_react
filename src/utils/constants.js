@@ -2,7 +2,7 @@ export const weatherOptions = [
   {
     url: require("../images/day/Sun.svg").default,
     day: true,
-    type: "sunnny",
+    type: "sunny",
   },
   {
     url: require("../images/day/Cloud.svg").default,
@@ -28,6 +28,11 @@ export const weatherOptions = [
     url: require("../images/day/Storm.svg").default,
     day: true,
     type: "storm",
+  },
+  {
+    url: require("../images/night/Clear.svg").default,
+    day: false,
+    type: "clear",
   },
   {
     url: require("../images/night/Cloudy.svg").default,

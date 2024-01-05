@@ -1,7 +1,7 @@
 import { checkServerResponse } from "./api";
 
-const latitude = 37.97;
-const longitude = 122.03;
+const latitude = 37.978;
+const longitude = -122.0311;
 const APIkey = "92772b744661af8b829e8e81a90fb2fe";
 
 export const getForecastWeather = () => {
