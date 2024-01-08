@@ -12,7 +12,12 @@ import {
   parseForecastData,
 } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
+import {
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import {
   getClothingItems,
@@ -21,6 +26,17 @@ import {
 } from "../../utils/api";
 import Profile from "../Profile/Profile";
 import ConfirmationModal from "../ConfirmationModal/ConfimationModal";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
+import {
+  postSignup,
+  postSignIn,
+  getUserInfo,
+  editProfile,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/auth";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
