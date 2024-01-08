@@ -6,8 +6,10 @@ const ConfirmationModal = ({
   onDeleteItem,
   buttonText,
 }) => {
+  const token = localStorage.getItem("jwt");
+
   const handleDeleteItemSubmit = () => {
-    onDeleteItem(selectedCard._id);
+    onDeleteItem(selectedCard._id, token);
   };
   return (
     <div className={`modal`}>
