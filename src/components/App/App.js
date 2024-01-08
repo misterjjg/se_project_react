@@ -51,6 +51,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
 
+  // ----------------Handlers ---------------------------
+
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -128,6 +130,8 @@ function App() {
     };
     handleSubmit(registerSubmit);
   };
+
+  // ----------------USE EFFECT ---------------------------
 
   useEffect(() => {
     getForecastWeather()
