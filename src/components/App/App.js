@@ -48,6 +48,8 @@ function App() {
   const [day, setDay] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [clothingItems, setClothingItems] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -83,6 +85,7 @@ function App() {
       name: values.name,
       imageUrl: values.imageUrl,
       weather: values.weatherType,
+      token: values.token,
     };
     const newClothingRequest = () => {
       return addNewClothingItem(item).then((item) => {
@@ -92,9 +95,9 @@ function App() {
     handleSubmit(newClothingRequest);
   };
 
-  const handleDeleteItemSubmit = (selectedCard) => {
+  const handleDeleteItemSubmit = (selectedCard, token) => {
     const deleteCardRequest = () => {
-      return deleteClothingItems(selectedCard).then(() => {
+      return deleteClothingItems(selectedCard, token).then(() => {
         const newItem = clothingItems.filter((item) => {
           return item._id !== selectedCard;
         });
@@ -102,6 +105,28 @@ function App() {
       });
     };
     handleSubmit(deleteCardRequest);
+  };
+
+  const handleLogin = (email, password) => {
+    const logIn = () => {
+      return postSignIn({ email, password }).then((res) => {
+        if (res.token) {
+          localStorage.setItem("jwt", res.token);
+          setLoggedIn(true);
+          return res;
+        }
+      });
+    };
+    handleSubmit(logIn);
+  };
+
+  const handleRegisterSubmit = (email, password, name, avatar) => {
+    const registerSubmit = () => {
+      return postSignup({ email, password, name, avatar }).then((res) => {
+        handleLogin(email, password);
+      });
+    };
+    handleSubmit(registerSubmit);
   };
 
   useEffect(() => {
