@@ -25,12 +25,6 @@
   align-items: center;
 }
 
-/* .header__avatar-logo {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-} */
-
 .header__avatar {
   display: flex;
   align-items: center;
