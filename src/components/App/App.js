@@ -37,6 +37,7 @@ import {
   addCardLike,
   removeCardLike,
 } from "../../utils/auth";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -123,12 +124,21 @@ function App() {
   };
 
   const handleRegisterSubmit = (email, password, name, avatar) => {
-    const registerSubmit = () => {
+    const registerSubmitted = () => {
       return postSignup({ email, password, name, avatar }).then((res) => {
         handleLogin(email, password);
       });
     };
-    handleSubmit(registerSubmit);
+    handleSubmit(registerSubmitted);
+  };
+
+  const handleEditProfileSubmit = (name, avatar, token) => {
+    const editProfileSubmitted = () => {
+      return editProfile(name, avatar, token).then((res) => {
+        setCurrentUser(res.data);
+      });
+    };
+    handleSubmit(editProfileSubmitted);
   };
 
   // ----------------USE EFFECT ---------------------------
@@ -177,6 +187,20 @@ function App() {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
+      getUserInfo(jwt)
+        .then((res) => {
+          if (res) {
+            setCurrentUser(res);
+            setLoggedIn(true);
+          }
+        })
+        .catch(console.error);
+    }
+  }, [loggedIn]);
 
   return (
     <div>

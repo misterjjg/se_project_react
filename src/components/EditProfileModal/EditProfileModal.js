@@ -68,3 +68,5 @@ const EditProfileModal = ({ onClose, isOpen, onSubmit, buttonText }) => {
     </ModalWithForm>
   );
 };
+
+export default EditProfileModal;
