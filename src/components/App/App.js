@@ -153,6 +153,38 @@ function App() {
     handleSubmit(editProfileSubmitted);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("jwt");
+    setLoggedIn(false);
+    setClothingItems(clothingItems);
+  };
+
+  const handleCardLike = (item, isLiked, currentUser) => {
+    const token = localStorage.getItem("jwt");
+    // Check if this card is now liked
+    !isLiked
+      ? // if so, send a request to add the user's id to the card's likes array
+        // the first argument is the card's id
+        addCardLike(item._id, currentUser._id, token)
+          .then((res) => {
+            setClothingItems((clothingItems) =>
+              clothingItems.map((card) => (card._id === item._id ? res : card))
+            );
+          })
+          .catch((err) => console.log(err))
+      : // if not, send a request to remove the user's id from the card's likes array
+        // the first argument is the card's id
+        removeCardLike(item._id, currentUser._id, token)
+          .then((updatedCard) => {
+            setClothingItems((clothingItems) =>
+              clothingItems.map((card) =>
+                card._id === item._id ? updatedCard : card
+              )
+            );
+          })
+          .catch((err) => console.log(err));
+  };
+
   // ----------------USE EFFECT ---------------------------
 
   useEffect(() => {
@@ -235,6 +267,7 @@ function App() {
                 clothingItems={clothingItems}
                 type={forecast}
                 day={day}
+                onCardLike={handleCardLike}
               />
             </Route>
             <Route path="/profile">
@@ -243,6 +276,8 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 onCreateModal={handleCreateModal}
                 onEditProfileModal={handleEditProfileModal}
+                onLogout={handleLogout}
+                onCardLike={handleCardLike}
               ></Profile>
             </Route>
           </Switch>
