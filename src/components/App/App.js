@@ -38,6 +38,7 @@ import {
   removeCardLike,
 } from "../../utils/auth";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -270,7 +271,7 @@ function App() {
                 onCardLike={handleCardLike}
               />
             </Route>
-            <Route path="/profile">
+            <ProtectedRoute path="/profile" loggedIn={loggedIn}>
               <Profile
                 clothingItems={clothingItems}
                 onSelectCard={handleSelectedCard}
@@ -279,6 +280,9 @@ function App() {
                 onLogout={handleLogout}
                 onCardLike={handleCardLike}
               ></Profile>
+            </ProtectedRoute>
+            <Route exact path="">
+              {loggedIn ? <Redirect to="/profile" /> : <Redirect to="/" />}
             </Route>
           </Switch>
 
