@@ -1,4 +1,4 @@
-import { baseUrl, headers } from "./constants";
+import { baseUrl } from "./constants";
 
 export const checkServerResponse = (res) => {
   if (res.ok) {

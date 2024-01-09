@@ -12,12 +12,7 @@ import {
   parseForecastData,
 } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import {
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom/cjs/react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import {
   getClothingItems,

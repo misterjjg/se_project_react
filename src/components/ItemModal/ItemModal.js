@@ -4,7 +4,6 @@ import { useContext } from "react";
 
 const ItemModal = ({ selectedCard, onClose, handleDeleteButton }) => {
   const currentUser = useContext(CurrentUserContext);
-  const token = localStorage.getItem("jwt");
 
   const isOwner = selectedCard.owner === currentUser._id;
 
