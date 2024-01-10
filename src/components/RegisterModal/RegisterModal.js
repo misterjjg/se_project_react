@@ -112,7 +112,7 @@ const RegisterModal = ({
       </label>
       <div>
         <button
-          type="submit"
+          type="button"
           className="modal__submit-button modal_submit-button2"
           onClick={handleLoginClick}
         >
