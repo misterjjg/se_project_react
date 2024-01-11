@@ -11,15 +11,17 @@ function Profile({
   onCardLike,
 }) {
   return (
-    <main className="profile">
-      <SideBar onEditProfileModal={onEditProfileModal} onLogout={onLogout} />
+    <section className="profile">
+      <div className="profile__sidebar">
+        <SideBar onEditProfileModal={onEditProfileModal} onLogout={onLogout} />
+      </div>
       <ClothesSection
         clothingItems={clothingItems}
         onSelectCard={onSelectCard}
         onCreateModal={onCreateModal}
         onCardLike={onCardLike}
       />
-    </main>
+    </section>
   );
 }
 
