@@ -16,15 +16,13 @@ const ItemCard = ({ item, onSelectCard, onCardLike }) => {
   };
 
   return (
-    <div className="card__item">
-      <div>
-        <img
-          src={item.imageUrl}
-          alt={item.name}
-          className="card__image"
-          onClick={() => onSelectCard(item)}
-        />
-      </div>
+    <div className="card__element">
+      <img
+        src={item.imageUrl}
+        alt={item.name}
+        className="card__image"
+        onClick={() => onSelectCard(item)}
+      />
       <div className="card__title">
         <h2 className="card__name">{item.name}</h2>
         <button
