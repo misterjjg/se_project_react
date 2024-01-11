@@ -90,9 +90,40 @@
 }
 
 .modal__radio-button {
-  height: 16px;
+  margin: 0;
   width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 50%;
+  accent-color: black;
+}
+
+.modal__weather-section {
+  color: #000;
+  font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.modal__radio-weather {
+  margin-left: 8px;
   color: rgba(0, 0, 0, 0.5);
+  font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.modal__radio-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal__radio-option {
+  display: flex;
+  align-items: center;
 }
 
 .modal__close-button {

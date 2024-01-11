@@ -70,9 +70,9 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
           />
         </label>
       </div>
-      <p className="modal__select-weather">Select the weather type: </p>
-      <div className="modal__radio-inputs">
-        <div>
+      <p className="modal__weather-section">Select the weather type: </p>
+      <div className="modal__radio-section">
+        <div className="modal__radio-option">
           <input
             type="radio"
             id="hot"
@@ -81,11 +81,11 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
             name="weatherType"
             onChange={handleWeatherChange}
           />
-          <label className="modal__radio-button-label" htmlFor="hot">
+          <label className="modal__radio-weather" htmlFor="hot">
             Hot
           </label>
         </div>
-        <div>
+        <div className="modal__radio-option">
           <input
             type="radio"
             id="warm"
@@ -94,11 +94,11 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
             name="weatherType"
             onChange={handleWeatherChange}
           />
-          <label className="modal__radio-button-label" htmlFor="warm">
+          <label className="modal__radio-weather" htmlFor="warm">
             Warm
           </label>
         </div>
-        <div>
+        <div className="modal__radio-option">
           <input
             type="radio"
             id="cold"
@@ -107,7 +107,7 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, buttonText }) => {
             name="weatherType"
             onChange={handleWeatherChange}
           />
-          <label className="modal__radio-button-label" htmlFor="cold">
+          <label className="modal__radio-weather" htmlFor="cold">
             Cold
           </label>
         </div>
