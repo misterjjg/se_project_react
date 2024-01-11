@@ -77,7 +77,7 @@ const LoginModal = ({
       <div>
         <button
           type="button"
-          className="modal__submit-button modal_submit-button2"
+          className="modal__submit-button modal__submit-button2"
           onClick={handleRegisterClick}
         >
           or Register

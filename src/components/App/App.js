@@ -162,7 +162,7 @@ function App() {
           .then((res) => {
             setClothingItems((clothingItems) =>
               clothingItems.map((card) =>
-                card._id === item._id ? res.data : card
+                card._id === item._id ? res.item : card
               )
             );
           })
@@ -171,7 +171,7 @@ function App() {
           .then((updatedCard) => {
             setClothingItems((clothingItems) =>
               clothingItems.map((card) =>
-                card._id === item._id ? updatedCard.data : card
+                card._id === item._id ? updatedCard.item : card
               )
             );
           })
