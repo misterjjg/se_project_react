@@ -143,7 +143,7 @@ function App() {
   const handleEditProfileSubmit = (name, avatar, token) => {
     const editProfileSubmitted = () => {
       return editProfile(name, avatar, token).then((res) => {
-        setCurrentUser(res.data);
+        setCurrentUser(res.user);
       });
     };
     handleSubmit(editProfileSubmitted);
