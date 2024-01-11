@@ -2,37 +2,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  padding: 0 20px;
+  max-height: 40px;
+  padding: 32px 40px 28px 40px;
 }
 
-.header__left {
+.header__menu-left {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
 }
 
-.header__right {
+.header__menu-right {
   display: flex;
   gap: 20px;
   align-items: center;
 }
 
 .header__logo {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+  max-width: 89px;
+  max-height: 40px;
+}
+
+.header__logo-image {
+  max-width: 89px;
+  max-height: 40px;
 }
 
 .header__avatar {
+  padding-left: 12px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.header__menu-buttons {
   display: flex;
-  align-items: center;
   gap: 20px;
 }
 
-.header__button {
+.header__add-button {
   color: #000;
+  background-color: #fff;
   font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
   font-style: normal;
   font-size: 20px;
@@ -41,14 +50,21 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.header__avatar-name {
+.header__add-button:hover {
+  opacity: 0.4;
+}
+
+.header__name {
   color: #000;
   font-family: "CabinetGrotesk-Medium", Arial, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .header__date {

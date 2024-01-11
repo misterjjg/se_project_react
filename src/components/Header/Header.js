@@ -23,10 +23,10 @@ const Header = ({
 
   return (
     <header className="header">
-      <div className="header__logo">
-        <div className="header__left">
+      <div className="header__menu-left">
+        <div className="header__logo">
           <Link to="/">
-            <img src={logo} alt="WTWR Logo" />
+            <img src={logo} alt="WTWR Logo" className="header__logo-image" />
           </Link>
         </div>
         <h3 className="header__date">
@@ -34,19 +34,19 @@ const Header = ({
         </h3>
       </div>
       {loggedIn ? (
-        <div className="header__avatar">
-          <div className="header__right">
-            <ToggleSwitch />
-
+        <div className="header__menu-right">
+          <ToggleSwitch />
+          <div className="header__menu-buttons">
             <button
-              className="header__button"
+              className="header__add-button"
               onClick={onCreateModal}
               type="text"
             >
               + Add Clothes
             </button>
           </div>
-          <Link className="header__avatar-name" to="/profile">
+
+          <Link className="header__name" to="/profile">
             {currentUser.name}
           </Link>
           <div>
@@ -60,20 +60,25 @@ const Header = ({
           </div>
         </div>
       ) : (
-        <div className="header__right">
+        <div className="header__menu-right">
           <ToggleSwitch />
+          <div className="header__menu-buttons">
+            <button
+              className="header__add-button"
+              onClick={onRegisterModal}
+              type="text"
+            >
+              Sign Up
+            </button>
 
-          <button
-            className="header__button"
-            onClick={onRegisterModal}
-            type="text"
-          >
-            Sign Up
-          </button>
-
-          <button className="header__button" onClick={onLoginModal} type="text">
-            Log In
-          </button>
+            <button
+              className="header__add-button"
+              onClick={onLoginModal}
+              type="text"
+            >
+              Log In
+            </button>
+          </div>
         </div>
       )}
     </header>
