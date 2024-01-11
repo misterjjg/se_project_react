@@ -42,36 +42,38 @@ const LoginModal = ({
       isOpen={isOpen}
       onSubmit={handleLoginSubmit}
       buttonText={buttonText}
-      modalName={"login"}
+      name={"login"}
     >
-      <label>
-        <p className="modal__input-title">Email</p>
-        <input
-          type="text"
-          name="email"
-          minLength="1"
-          maxLength="100"
-          placeholder="Email"
-          required
-          className="modal__input"
-          value={email}
-          onChange={handleEmailChange}
-        ></input>
-      </label>
-      <label>
-        <p className="modal__input-title">Password</p>
-        <input
-          type="text"
-          name="password"
-          minLength="1"
-          maxLength="30"
-          placeholder="Password"
-          required
-          className="modal__input"
-          value={password}
-          onChange={handlePasswordChange}
-        ></input>
-      </label>
+      <div className="modal__text-inputs">
+        <label className="modal__label">
+          Email
+          <input
+            type="text"
+            name="email"
+            minLength="1"
+            maxLength="100"
+            placeholder="Email"
+            required
+            className="modal__input"
+            value={email}
+            onChange={handleEmailChange}
+          ></input>
+        </label>
+        <label className="modal__label">
+          Password
+          <input
+            type="text"
+            name="password"
+            minLength="1"
+            maxLength="30"
+            placeholder="Password"
+            required
+            className="modal__input"
+            value={password}
+            onChange={handlePasswordChange}
+          ></input>
+        </label>
+      </div>
       <div>
         <button
           type="button"

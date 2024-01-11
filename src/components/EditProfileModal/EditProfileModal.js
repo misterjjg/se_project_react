@@ -37,34 +37,36 @@ const EditProfileModal = ({ onClose, isOpen, onSubmit, buttonText }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText={buttonText}
-      modalName={"editProfile"}
+      name={"editProfile"}
     >
-      <label>
-        <p className="modal__input-title">Name</p>
-        <input
-          type="text"
-          name="name"
-          minLength="1"
-          maxLength="30"
-          placeholder="Name"
-          required
-          className="modal__input"
-          value={name}
-          onChange={handleNameChange}
-        ></input>
-      </label>
-      <label>
-        <p className="modal__input-title">Avatar URL</p>
-        <input
-          type="url"
-          name="link"
-          placeholder="Avatar URL"
-          required
-          className="modal__input"
-          value={avatar}
-          onChange={handleAvatarChange}
-        ></input>
-      </label>
+      <div className="modal__text-inputs">
+        <label className="modal__label">
+          Name
+          <input
+            type="text"
+            name="name"
+            minLength="1"
+            maxLength="30"
+            placeholder="Name"
+            required
+            className="modal__input"
+            value={name}
+            onChange={handleNameChange}
+          ></input>
+        </label>
+        <label className="modal__label">
+          Avatar URL
+          <input
+            type="url"
+            name="link"
+            placeholder="Avatar URL"
+            required
+            className="modal__input"
+            value={avatar}
+            onChange={handleAvatarChange}
+          ></input>
+        </label>
+      </div>
     </ModalWithForm>
   );
 };

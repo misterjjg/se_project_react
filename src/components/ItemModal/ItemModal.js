@@ -11,37 +11,30 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteButton }) => {
     isOwner ? "modal__delete-button_visible" : "modal__delete-button_hidden"
   }`;
 
-  // const handleDeleteItemSubmit = () => {
-  //   onDeleteItem(selectedCard._id, token);
-  // };
-
   return (
     <div className={`modal`}>
-      <div className="modal__content">
+      <div className="modal__container-image">
         <button
           type="button"
           onClick={onClose}
-          className="modal__item-close-button"
+          className="modal__close-button-white"
         />
         <img
-          className="modal__item-image"
+          className="modal__image-preview"
           src={selectedCard.imageUrl}
           alt={selectedCard.name}
         />
-        <div className="modal__footer">
-          <p className="modal__item-name">{selectedCard.name}</p>
-          <div className="modal__weather-type">
-            Weather type: {selectedCard.weather}
-          </div>
-          <button
-            type="button"
-            // className="modal__delete-button"
-            className={itemDeleteButtonClassName}
-            onClick={handleDeleteButton}
-          >
-            Delete Item
-          </button>
+        <div className="modal__item-name">{selectedCard.name}</div>
+        <div className="modal__weather-type">
+          Weather type: {selectedCard.weather}
         </div>
+        <button
+          type="button"
+          className={itemDeleteButtonClassName}
+          onClick={handleDeleteButton}
+        >
+          Delete Item
+        </button>
       </div>
     </div>
   );
