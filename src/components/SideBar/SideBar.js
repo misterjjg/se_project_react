@@ -18,8 +18,8 @@ const SideBar = ({ onEditProfileModal, onLogout }) => {
           src={currentUser.avatar}
           alt="Avatar Logo"
         />
+        <p className="sidebar__name">{currentUser.name}</p>
       </div>
-      <p className="sidebar__name">{currentUser.name}</p>
       <div className="sidebar__button-container">
         <button
           className="sidebar__button"

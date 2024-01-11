@@ -30,6 +30,11 @@ export const weatherOptions = [
     type: "storm",
   },
   {
+    url: require("../images/night/Raining.svg").default,
+    day: false,
+    type: "haze",
+  },
+  {
     url: require("../images/night/Clear.svg").default,
     day: false,
     type: "clear",
@@ -63,6 +68,11 @@ export const weatherOptions = [
     url: require("../images/night/Stormy.svg").default,
     day: false,
     type: "storm",
+  },
+  {
+    url: require("../images/night/Raining.svg").default,
+    day: false,
+    type: "haze",
   },
 ];
 

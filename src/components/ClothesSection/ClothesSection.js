@@ -16,7 +16,7 @@ const ClothesSection = ({
   });
 
   return (
-    <section className="clothes-section">
+    <div className="clothes-section">
       <div className="clothes-section__container">
         <h3 className="clothes-section__title">Your Items:</h3>
         <button
@@ -27,7 +27,7 @@ const ClothesSection = ({
           + Add New Items
         </button>
       </div>
-      <ul className="clothes-section__cards">
+      <div className="clothes-section__cards">
         {""}
         {ownedItems.map((item) => (
           <ItemCard
@@ -37,8 +37,8 @@ const ClothesSection = ({
             onCardLike={onCardLike}
           />
         ))}
-      </ul>
-    </section>
+      </div>
+    </div>
   );
 };
 
