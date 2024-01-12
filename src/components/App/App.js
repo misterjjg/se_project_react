@@ -143,7 +143,7 @@ function App() {
   const handleEditProfileSubmit = (name, avatar, token) => {
     const editProfileSubmitted = () => {
       return editProfile(name, avatar, token).then((res) => {
-        setCurrentUser(res.data);
+        setCurrentUser(res.user);
       });
     };
     handleSubmit(editProfileSubmitted);
@@ -162,7 +162,7 @@ function App() {
           .then((res) => {
             setClothingItems((clothingItems) =>
               clothingItems.map((card) =>
-                card._id === item._id ? res.data : card
+                card._id === item._id ? res.item : card
               )
             );
           })
@@ -171,7 +171,7 @@ function App() {
           .then((updatedCard) => {
             setClothingItems((clothingItems) =>
               clothingItems.map((card) =>
-                card._id === item._id ? updatedCard.data : card
+                card._id === item._id ? updatedCard.item : card
               )
             );
           })

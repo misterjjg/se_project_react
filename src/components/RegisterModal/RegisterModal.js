@@ -105,8 +105,8 @@ const RegisterModal = ({
             type="url"
             name="link"
             placeholder="Avatar URL"
-            required
             className="modal__input"
+            required
             value={avatar}
             onChange={handleAvatarChange}
           ></input>
@@ -115,7 +115,7 @@ const RegisterModal = ({
       <div>
         <button
           type="button"
-          className="modal__submit-button modal_submit-button2"
+          className="modal__submit-button modal__submit-button2"
           onClick={handleLoginClick}
         >
           or Log In
