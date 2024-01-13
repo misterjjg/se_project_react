@@ -100,7 +100,7 @@ function App() {
     };
     const newClothingRequest = () => {
       return addNewClothingItem(item).then((item) => {
-        setClothingItems([item, ...clothingItems]);
+        setClothingItems([item.item, ...clothingItems]);
       });
     };
     handleSubmit(newClothingRequest);
