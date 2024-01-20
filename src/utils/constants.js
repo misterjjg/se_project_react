@@ -79,7 +79,7 @@ export const weatherOptions = [
 // --- CLOTHING API --- //
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.wtwrjg.crabdance.com"
+    ? "https://api.wtwrjg.sundby.com"
     : "http://localhost:3001";
 
 export const headers = {
